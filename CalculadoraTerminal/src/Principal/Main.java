@@ -44,44 +44,74 @@ public class Main {
             //Switch case para escolha e execução do cálculo
             switch (opcao) {
                 case 1:
-                    System.out.println("Digite o primeiro número a ser somado: ");
-                    num1 = leitura.nextDouble();
-                    System.out.println("Agora digite o segundo número: ");
-                    num2 = leitura.nextDouble();
-                    System.out.println(String.format("%.2f + %.2f = %.2f", num1, num2, calculadora.soma(num1,num2)));
+                    try{
+                        System.out.println("Digite o primeiro número a ser somado: ");
+                        num1 = leitura.nextDouble();
+                        System.out.println("Agora digite o segundo número: ");
+                        num2 = leitura.nextDouble();
+                        System.out.println(String.format("%.2f + %.2f = %.2f", num1, num2, calculadora.soma(num1,num2)));
+                    }catch (RuntimeException e){
+                        System.out.println("Erro ao realizar a soma: " + e.getMessage());
+                    }
+
                     break;
                 case 2:
-                    System.out.println("Digite o minuendo: ");
-                    num1 = leitura.nextDouble();
-                    System.out.println("Agora digite o subtraendo: ");
-                    num2 = leitura.nextDouble();
-                    System.out.println(String.format("%.2f - %.2f = %.2f", num1, num2, calculadora.subtracao(num1,num2)));
+                    try{
+                        System.out.println("Digite o minuendo: ");
+                        num1 = leitura.nextDouble();
+                        System.out.println("Agora digite o subtraendo: ");
+                        num2 = leitura.nextDouble();
+                        System.out.println(String.format("%.2f - %.2f = %.2f", num1, num2, calculadora.subtracao(num1,num2)));
+                    }catch (RuntimeException e){
+                        System.out.println("Erro ao realizar a subtração: " + e.getMessage());
+                    }
+
                     break;
                 case 3:
-                    System.out.println("Digite o primeiro número a ser multiplicado: ");
-                    num1 = leitura.nextDouble();
-                    System.out.println("Agora digite o segundo número: ");
-                    num2 = leitura.nextDouble();
-                    System.out.println(String.format("%.2f * %.2f = %.2f", num1, num2, calculadora.multiplicacao(num1,num2)));
+                    try{
+                        System.out.println("Digite o primeiro número a ser multiplicado: ");
+                        num1 = leitura.nextDouble();
+                        System.out.println("Agora digite o segundo número: ");
+                        num2 = leitura.nextDouble();
+                        System.out.println(String.format("%.2f * %.2f = %.2f", num1, num2, calculadora.multiplicacao(num1,num2)));
+                    }catch (RuntimeException e){
+                        System.out.println("Erro ao realizar a multiplicação: " + e.getMessage());
+                    }
+
                     break;
                 case 4:
-                    System.out.println("Digite o número a ser dividido: ");
-                    num1 = leitura.nextDouble();
-                    System.out.println("Agora digite o divisor: ");
-                    num2 = leitura.nextDouble();
-                    System.out.println(String.format("%.2f / %.2f = %.2f", num1, num2, calculadora.divisao(num1,num2)));
+                    try{
+                        System.out.println("Digite o número a ser dividido: ");
+                        num1 = leitura.nextDouble();
+                        System.out.println("Agora digite o divisor: ");
+                        num2 = leitura.nextDouble();
+                        System.out.println(String.format("%.2f / %.2f = %.2f", num1, num2, calculadora.divisao(num1,num2)));
+                    } catch (RuntimeException e) {
+                        System.out.println("Erro ao realizar a divisão: " + e.getMessage());
+                    }
+
                     break;
                 case 5:
-                    System.out.println("Digite o número o qual você deseja retirar a porcentagem: ");
-                    num1 = leitura.nextDouble();
-                    System.out.println("Agora digite a porcentagem (somente a parte numérica): ");
-                    num2 = leitura.nextDouble();
-                    System.out.println(String.format("%.2f porcento de %.2f é %.2f", num2, num1, calculadora.porcentagem(num1,num2)));
+                    try{
+                        System.out.println("Digite o número o qual você deseja retirar a porcentagem: ");
+                        num1 = leitura.nextDouble();
+                        System.out.println("Agora digite a porcentagem (somente a parte numérica): ");
+                        num2 = leitura.nextDouble();
+                        System.out.println(String.format("%.2f porcento de %.2f é %.2f", num2, num1, calculadora.porcentagem(num1,num2)));
+                    } catch (RuntimeException e) {
+                        System.out.println("Erro ao realizar o cálculo de porcentagem: " + e.getMessage());
+                    }
+
                     break;
                 case 6:
-                    System.out.println("Digite o número o qual você deseja retirar a raiz quadrada: ");
-                    num1 = leitura.nextDouble();
-                    System.out.println(String.format("A raiz quadrada de %.2f é %.2f", num1, calculadora.raizQuadrada(num1)));
+                    try{
+                        System.out.println("Digite o número o qual você deseja retirar a raiz quadrada: ");
+                        num1 = leitura.nextDouble();
+                        System.out.println(String.format("A raiz quadrada de %.2f é %.2f", num1, calculadora.raizQuadrada(num1)));
+                    } catch (RuntimeException e) {
+                        System.out.println("Erro ao realizar o cálculo de raiz quadrada: " + e.getMessage());
+                    }
+
                     break;
                 default:
                     System.out.println("Por favor insira um valor válido.");
